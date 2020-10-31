@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Click the buttons to sort phone objects on alphabet and year.</p>
+
+<button onclick="alphabet()">Alphabet_Sort</button>
+<button onclick="myFunction()">Numeric_Sort</button>
+
+<p id="demo"></p>
+
+<p id="demo1"></p>
+
+<script>
+var phones = [
+  {type:"Vivo", year:2016},
+  {type:"Samsung", year:2001},
+  {type:"Blackberry", year:2010}
+];
+
+displayphones();
+
+function alphabet() {
+  phones.sort(function(a, b){
+    var x = a.type.toLowerCase();
+    var y = b.type.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  });
+  displayphones();
+}
+
+function displayphones() {
+  document.getElementById("demo").innerHTML =
+  phones[0].type + " " + phones[0].year + "<br>" +
+  phones[1].type + " " + phones[1].year + "<br>" +
+  phones[2].type + " " + phones[2].year;
+}
+displayphones();
+
+function myFunction() {
+  phones.sort(function(a, b){return a.year - b.year});
+  displayphones();
+}
+
+function displayphones() {
+  document.getElementById("demo1").innerHTML =
+  phones[0].type + " " + phones[0].year + "<br>" +
+  phones[1].type + " " + phones[1].year + "<br>" +
+  phones[2].type + " " + phones[2].year;
+}
+</script>
+
+</body>
+</html>

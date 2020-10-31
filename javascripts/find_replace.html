@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Regular Expressions</h2>
+
+<p>Search for position of days and replace iwth night</p>
+
+<p id="demo"></p>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo1">days end and days begin with the sun</p>
+<script>
+var str = "alwasy days end and days begin with the sun "; 
+var n = str.search(/days/i);
+document.getElementById("demo").innerHTML = n;
+
+function myFunction() 
+{
+  var str = document.getElementById("demo1").innerHTML; 
+  var txt = str.replace(/days/i,"night");
+  document.getElementById("demo1").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>
+
